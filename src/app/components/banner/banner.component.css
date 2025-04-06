@@ -1,0 +1,44 @@
+.banner {
+  background-color: #1abc9c;
+  color: white;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.banner-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; /* heading font */
+}
+
+.banner-subtitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 0;
+  font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; /* sans font */
+}
+
+@media (min-width: 640px) {
+  .banner-title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .banner-title {
+    font-size: 3.75rem;
+  }
+}

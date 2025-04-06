@@ -1,0 +1,19 @@
+<div class="search-filter">
+  <input
+    type="search"
+    class="search-input"
+    placeholder="Search"
+    (input)="onSearch($event)"
+  />
+  <div class="filter-buttons">
+    @for (level of difficultyLevels; track $index) {
+    <button
+      class="difficulty-button"
+      [class.active]="level === activeFilter"
+      (click)="filterByDifficulty(level)"
+    >
+      {{ level }}
+    </button>
+    }
+  </div>
+</div>

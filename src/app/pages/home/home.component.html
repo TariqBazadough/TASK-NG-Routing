@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+
+<app-banner
+  title="Welcome To Hike"
+  subtitle="a delightful way to explore nature with friends and family"
+></app-banner>
+
+<section class="explore-section" id="portfolio">
+  <div class="explore-container">
+    <h2 class="explore-title">Explore Trips</h2>
+    <br />
+    <app-search-filter
+      (searchChange)="handleSearch($event)"
+      (filterChange)="handleFilter($event)"
+    ></app-search-filter>
+    <app-divider></app-divider>
+    <app-trips-grid
+      [trips]="filteredTrips"
+      (tripSelected)="selectedTrip = $event"
+    ></app-trips-grid>
+  </div>
+</section>
+
+@if (selectedTrip) {
+<app-trip-details [trip]="selectedTrip"></app-trip-details>
+}
