@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Trip } from '../../../data/trips';
 import { TripCardComponent } from '../trip-card/trip-card.component';
 
