@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input } from '@angular/core';
 import { Trip } from '../../../data/trips';
 import { TripCardComponent } from '../trip-card/trip-card.component';
 
@@ -11,9 +11,4 @@ import { TripCardComponent } from '../trip-card/trip-card.component';
 })
 export class TripsGridComponent {
   @Input() trips: Trip[] = [];
-  @Output() tripSelected = new EventEmitter<Trip>();
-
-  selectTrip(trip: Trip) {
-    // this.tripSelected.emit(trip);
-  }
 }
