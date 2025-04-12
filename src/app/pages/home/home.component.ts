@@ -16,14 +16,14 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
     DividerComponent,
     TripsGridComponent,
     TripDetailsComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
   trips: Trip[] = trips;
-  filteredTrips: Trip[] = [...trips]
+  filteredTrips: Trip[] = [...trips];
   selectedTrip: Trip = trips[0];
   searchQuery: string = '';
   activeDifficultyFilter: DifficultyLevel = 'All';
@@ -39,22 +39,17 @@ export class HomeComponent {
   }
 
   private applyFilters() {
-    if(this.activeDifficultyFilter === 'All') {
-      this.filteredTrips = this.trips
-    } else {
-      this.filteredTrips = this.trips.filter(trip => {
-        // Apply search filter
-        const matchesSearch = !this.searchQuery ||
-          trip.name.toLowerCase().includes(this.searchQuery) ||
-          trip.city.toLowerCase().includes(this.searchQuery) ||
-          trip.details.toLowerCase().includes(this.searchQuery);
+    this.filteredTrips = this.trips.filter((trip) => {
+      const matchesSearch =
+        !this.searchQuery ||
+        trip.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+        trip.city.toLowerCase().includes(this.searchQuery.toLowerCase()) 
 
-        // Apply difficulty filter
-        const matchesDifficulty = !this.activeDifficultyFilter ||
-          trip.difficulty === this.activeDifficultyFilter;
+      const matchesDifficulty =
+        this.activeDifficultyFilter === 'All' ||
+        trip.difficulty === this.activeDifficultyFilter;
 
-        return matchesSearch && matchesDifficulty;
-      });
-    }
+      return matchesSearch && matchesDifficulty;
+    });
   }
 }

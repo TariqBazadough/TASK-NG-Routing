@@ -16,12 +16,12 @@ export class SearchFilterComponent {
   activeFilter: DifficultyLevel = 'All';
 
   onSearch(event: Event) {
-    // const inputElement = event.target as HTMLInputElement;
-    // this.searchChange.emit(inputElement.value);
+    const inputElement = event.target as HTMLInputElement;
+    this.searchChange.emit(inputElement.value);
   }
 
   filterByDifficulty(level: DifficultyLevel) {
-    // this.activeFilter = level;
-    // this.filterChange.emit(this.activeFilter);
+    this.activeFilter = level;
+    this.filterChange.emit(this.activeFilter);
   }
 }
