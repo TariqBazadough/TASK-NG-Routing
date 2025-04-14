@@ -1,0 +1,12 @@
+<section class="explore-section" id="portfolio">
+  <div class="explore-container">
+    <h2 class="explore-title">Explore Trips</h2>
+    <br />
+    <app-search-filter
+      (searchChange)="handleSearch($event)"
+      (filterChange)="handleFilter($event)"
+    ></app-search-filter>
+    <app-divider></app-divider>
+    <app-trips-grid [trips]="filteredTrips"></app-trips-grid>
+  </div>
+</section>
