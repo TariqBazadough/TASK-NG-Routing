@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DifficultyLevel } from '../../../data/trips';
 
 @Component({
@@ -11,8 +11,9 @@ import { DifficultyLevel } from '../../../data/trips';
 export class SearchFilterComponent {
   @Output() searchChange = new EventEmitter<string>();
   @Output() filterChange = new EventEmitter<DifficultyLevel>();
+  @Input() initialSearch: string = '';
 
-  difficultyLevels: DifficultyLevel[] = ['All','Easy', 'Moderate', 'Hard'];
+  difficultyLevels: DifficultyLevel[] = ['All', 'Easy', 'Moderate', 'Hard'];
   activeFilter: DifficultyLevel = 'All';
 
   onSearch(event: Event) {
