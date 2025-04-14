@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Trip,trips } from '../../../data/trips';
+import { TripDetailsComponent } from '../../components/trip-details/trip-details.component';
 
 @Component({
-  selector: 'app-trip-details',
+  selector: 'app-trip',
   standalone: true,
   imports: [
-    ActivatedRoute, 
-    Router, 
-    RouterModule
+   
+    RouterModule,
+    TripDetailsComponent
+ 
   ],
   templateUrl: './trip.component.html',
   styleUrl: './trip.component.css'

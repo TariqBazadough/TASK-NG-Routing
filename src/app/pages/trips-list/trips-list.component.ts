@@ -56,6 +56,10 @@ export class TripsListComponent {
         this.activeDifficultyFilter === 'All' ||
         trip.difficulty === this.activeDifficultyFilter;
 
+
+
+
+        console.log("Apply filter called")
       return matchesSearch && matchesDifficulty;
     });
   }
