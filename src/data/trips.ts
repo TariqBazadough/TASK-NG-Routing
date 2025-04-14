@@ -75,7 +75,7 @@ export const trips: Trip[] = [
   },
   {
     id: 6,
-    name: 'Ajloun Hike',
+    name: 'Maarij Hike',
     slug: 'ajloun-hike',
     city: 'ajloun',
     length: '30',
