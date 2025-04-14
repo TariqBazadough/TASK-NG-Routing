@@ -47,6 +47,10 @@
 .navbar-link:hover {
   color: #1abc9c;
 }
+.active-link {
+  color: lightpink;
+  font-weight: bold;
+}
 
 @media (min-width: 768px) {
   .navbar-links {
