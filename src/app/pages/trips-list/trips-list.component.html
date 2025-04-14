@@ -7,8 +7,13 @@
         (filterChange)="handleFilter($event)"
       ></app-search-filter>
       <app-divider></app-divider>
-      <app-trips-grid 
+      @if(filteredTrips.length > 0){
+        <app-trips-grid 
         [trips]="filteredTrips"
       ></app-trips-grid>
+      }
+      @else {
+        <h3>No trips found!</h3>
+    }
     </div>
   </section>
