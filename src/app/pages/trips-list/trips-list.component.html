@@ -1,0 +1,19 @@
+<section class="explore-section" id="portfolio">
+    <div class="explore-container">
+      <h2 class="explore-title">Explore Trips</h2>
+      <br />
+      <app-search-filter
+        (searchChange)="handleSearch($event)"
+        (filterChange)="handleFilter($event)"
+      ></app-search-filter>
+      <app-divider></app-divider>
+      @if(filteredTrips.length > 0){
+        <app-trips-grid 
+        [trips]="filteredTrips"
+      ></app-trips-grid>
+      }
+      @else {
+        <h3>No trips found!</h3>
+    }
+    </div>
+  </section>

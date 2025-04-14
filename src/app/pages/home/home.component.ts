@@ -22,34 +22,5 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  trips: Trip[] = trips;
-  filteredTrips: Trip[] = [...trips];
-  selectedTrip: Trip = trips[0];
-  searchQuery: string = '';
-  activeDifficultyFilter: DifficultyLevel = 'All';
 
-  handleSearch(searchTerm: string) {
-    this.searchQuery = searchTerm.toLowerCase();
-    this.applyFilters();
-  }
-
-  handleFilter(difficulty: DifficultyLevel) {
-    this.activeDifficultyFilter = difficulty;
-    this.applyFilters();
-  }
-
-  private applyFilters() {
-    this.filteredTrips = this.trips.filter((trip) => {
-      const matchesSearch =
-        !this.searchQuery ||
-        trip.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-        trip.city.toLowerCase().includes(this.searchQuery.toLowerCase()) 
-
-      const matchesDifficulty =
-        this.activeDifficultyFilter === 'All' ||
-        trip.difficulty === this.activeDifficultyFilter;
-
-      return matchesSearch && matchesDifficulty;
-    });
-  }
 }
