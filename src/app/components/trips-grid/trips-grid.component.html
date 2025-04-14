@@ -1,5 +1,7 @@
 <div class="trips-grid">
   @for (trip of trips; track trip.id) {
-  <app-trip-card [trip]="trip"></app-trip-card>
+  <a [routerLink]="['/trips', trip.slug]">
+    <app-trip-card [trip]="trip"></app-trip-card>
+  </a>
   }
 </div>

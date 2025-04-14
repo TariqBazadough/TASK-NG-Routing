@@ -2,19 +2,21 @@
   <div class="trip-details-content">
     <h2 class="trip-details-title">{{ trip.name }}</h2>
     <app-divider></app-divider>
-    <img
-      class="trip-details-image"
-      [src]="trip.img"
-      [alt]="trip.name"
-      width="500"
-      height="500"
-    />
-    <p class="trip-details-text">
-      City: {{ trip.city }}<br />
-      Length: {{ trip.length }}Km<br />
-      Rating: {{ trip.rating }}<br />
-      Difficulty: {{ trip.difficulty }}<br />
-      Details: {{ trip.details }}
-    </p>
+    <div *ngIf="trip">
+      <img
+        class="trip-details-image"
+        [src]="trip.img"
+        [alt]="trip.name"
+        width="500"
+        height="500"
+      />
+      <p class="trip-details-text">
+        City: {{ trip.city }}<br />
+        Length: {{ trip.length }}Km<br />
+        Rating: {{ trip.rating }}<br />
+        Difficulty: {{ trip.difficulty }}<br />
+        Details: {{ trip.details }}
+      </p>
+    </div>
   </div>
 </div>

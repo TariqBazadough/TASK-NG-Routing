@@ -3,8 +3,10 @@
     type="search"
     class="search-input"
     placeholder="Search"
+    [value]="initialSearch"
     (input)="onSearch($event)"
   />
+
   <div class="filter-buttons">
     @for (level of difficultyLevels; track $index) {
     <button
